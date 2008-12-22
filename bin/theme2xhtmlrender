@@ -5,6 +5,7 @@ rescue LoadError
    require 'rubygems'
    require 'plist'
 end
+require 'yaml'
 require 'uv/utility'
 
 base_dir = File.join( File.dirname(__FILE__), '..', 'render' )

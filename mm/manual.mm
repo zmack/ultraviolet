@@ -787,6 +787,38 @@ module Uv
 end
 ---------------------------------
 
+# Maintainer info #
+
+= Updating syntax files =
+
+Ultraviolet stores syntax files under the `syntax` directory. Syntax files can 
+be directly converted from Textmate format using the `plist2syntax` script that 
+gets installed with Textpow.
+
+--------hl shell-unix-generic,,false------
+plist2syntax $BUNDLE_DIR/Java.tmbundle/Syntaxes/Java.plist
+mv java.yaml syntax/java.syntax
+------------------------------------------
+
+= Updating theme files =
+
+Currently only XHTML is "officially" supported by ultraviolet, nevertheless, 
+experimental latex output support already exists and other output formats can
+be included in the future. This is important because theme conversion is format
+dependent. For xhmtl, the command is `theme2xhtmlrender` as shown in the 
+following example.
+
+--------hl shell-unix-generic,,false------
+theme2xhtmlrender $THEME_DIR/Amy.tmTheme
+------------------------------------------
+
+For latex, the command `theme2latexrender` is used instead.
+
+--------hl shell-unix-generic,,false------
+theme2latexrender $THEME_DIR/Amy.tmTheme
+------------------------------------------
+
+
 # Links #
 
 = Rubyforge Project page =
@@ -795,7 +827,7 @@ end
 
 = Requirements =
 
-* [Textpow http://rubyforge.org/projects/ultraviolet/].
+* [Textpow http://rubyforge.org/projects/textpow/].
 
 = Projects using Ultraviolet =
 
