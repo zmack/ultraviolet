@@ -66,8 +66,8 @@ module Uv
     #output = "xhtml", syntax_name = nil, line_numbers = false, render_style = "classic", headers = false
     init_syntaxes unless @syntaxes
 
-    syntax_name = options.delete(:syntax_name)
-    render_style = options.delete(:render_style)
+    syntax_name = options.delete(:syntax)
+    render_style = options.delete(:style)
 
     render_processor = get_render_processor(render_style, options)
     @syntaxes[syntax_name].parse( text,  render_processor )
